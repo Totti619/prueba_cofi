@@ -14,14 +14,14 @@ const findProduct = async (id: string): Promise<Product> => {
 }
 
 export const create = async (req: Request, res: Response) => {
-    const { id, code, name, price } = req.body
+    const { id, code, name, price, discount } = req.body
     try {
         const foundProduct = await findProduct(id)
         if (foundProduct) return res.json(foundProduct.toPrimitives())
     } catch (e) {}
     try {
         const creator = new ProductCreator(new JsonFileProductRepository())
-        const newProduct = await creator.run(id, code, name, price)
+        const newProduct = await creator.run(id, code, name, price, discount)
         return res.json(newProduct.toPrimitives())
     } catch (e) {
         console.error(e)
@@ -42,7 +42,7 @@ export const read = async (req: Request, res: Response) => {
 
 export const update = async (req: Request, res: Response) => {
     const { id } = req.params
-    const { code, name, price } = req.body
+    const { code, name, price, discount } = req.body
     let foundProduct: Product
     try {
         foundProduct = await findProduct(id)
@@ -54,7 +54,7 @@ export const update = async (req: Request, res: Response) => {
     }
     try {
         const updater = new ProductUpdater(new JsonFileProductRepository())
-        const updatedProduct = await updater.run(foundProduct, { code, name, price })
+        const updatedProduct = await updater.run(foundProduct, { code, name, price, discount })
         return res.json(updatedProduct.toPrimitives())
     } catch (e) {
         console.error(e)
@@ -67,7 +67,9 @@ export const remove = async (req: Request, res: Response) => {
     let foundProduct: Product
     try {
         foundProduct = await findProduct(id)
-    } catch (e) { return res.json('✅') }
+    } catch (e) {
+        return res.json('✅')
+    }
     try {
         const deletor = new ProductDeletor(new JsonFileProductRepository())
         await deletor.run(foundProduct)

@@ -1,5 +1,4 @@
 import { Product } from './Product'
-import { ProductId } from './ProductId';
 
 export interface ProductRepository {
     searchAll(): Promise<Array<Product>>

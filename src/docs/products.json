@@ -1,1 +1,30 @@
-{"8b93e1f2-f8cf-445f-a47b-bb076c63ebdd":{"id":"8b93e1f2-f8cf-445f-a47b-bb076c63ebdd","code":"PRODUCT","name":"product","price":19},"38851c3d-47c5-44c6-845f-e78d222a4bf8":{"id":"38851c3d-47c5-44c6-845f-e78d222a4bf8","code":"PRODUCT2","name":"product2","price":15},"98be018d-87a0-4a8d-a397-fe0f12076615":{"id":"98be018d-87a0-4a8d-a397-fe0f12076615","code":"PRODUCT3","name":"product3","price":50}}
+{
+    "98be018d-87a0-4a8d-a397-fe0f12076615": {
+        "id": "98be018d-87a0-4a8d-a397-fe0f12076615",
+        "code": "PRODUCT",
+        "name": "product",
+        "price": 25,
+        "discount": 0
+    },
+    "e3ca162f-2303-48cf-827d-4bcbcf7d0caf": {
+        "id": "e3ca162f-2303-48cf-827d-4bcbcf7d0caf",
+        "code": "PRODUCT_DISCOUNT",
+        "name": "product with discount",
+        "price": 20,
+        "discount": 1
+    },
+    "6b7e1df1-2249-49a1-ab9e-381f70f28f5b": {
+        "id": "6b7e1df1-2249-49a1-ab9e-381f70f28f5b",
+        "code": "PRODUCT_DISCOUNT2",
+        "name": "product with discount",
+        "price": 40,
+        "discount": 2
+    },
+    "5474997b-1706-4bb3-a662-aad3c9e4e06a": {
+        "id": "5474997b-1706-4bb3-a662-aad3c9e4e06a",
+        "code": "PRODUCT2",
+        "name": "product",
+        "price": 50,
+        "discount": 0
+    }
+}

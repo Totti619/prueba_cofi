@@ -19,7 +19,19 @@ export class ProductCheckout extends AggregateRoot implements Checkout {
 
     total(): number {
         if (this.productsScanned.length === 0) return 0
-        const prices = this.productsScanned.map(product => product.price.value)
+        const discountFrom = process.env.DISCOUNT_FROM || 3
+        const productsByQuantity: Record<string, number> = {}
+        this.productsScanned.forEach(product =>  {
+            productsByQuantity[product.code.value]
+                ? productsByQuantity[product.code.value]++
+                : productsByQuantity[product.code.value] = 1
+        })
+        console.log('productsByQuantity', productsByQuantity)
+        const prices = this.productsScanned.map(
+            product => productsByQuantity[product.code.value] >= discountFrom 
+                ? product.price.value - product.discount.value
+                : product.price.value
+        )
         const total = prices.reduce((acc, cur) => acc + cur)
         return total
     }

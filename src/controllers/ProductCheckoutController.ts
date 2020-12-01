@@ -73,13 +73,18 @@ export const scan = async (req: Request, res: Response) => {
     } catch (e) {
         return res.status(404).json({ message: 'Product checkout not found.' })
     }
-    const scanner = new ProductCheckoutScanner(
-        new JsonFileProductCheckoutRepository(),
-        new JsonFileProductRepository(),
-        foundProductCheckout
-    )
-    const productCheckout = await scanner.scan(code)
-    const formatter = new ProductCheckoutFormatter()
-    const formatted = formatter.run(productCheckout)
-    return res.json(formatted)
+    try {
+        const scanner = new ProductCheckoutScanner(
+            new JsonFileProductCheckoutRepository(),
+            new JsonFileProductRepository(),
+            foundProductCheckout
+        )
+        const productCheckout = await scanner.scan(code)
+        const formatter = new ProductCheckoutFormatter()
+        const formatted = formatter.run(productCheckout)
+        return res.json(formatted)
+    } catch (e) {
+        console.error(e)
+        return res.status(404).json({ message: 'Product not found.' })
+    }
 }

@@ -1,5 +1,4 @@
 import { Product } from "../../Domain/Product/Product";
-import { ProductId } from "../../Domain/Product/ProductId";
 import { ProductRepository } from "../../Domain/Product/ProductRepository";
 import { JsonFileRepository } from "../../Shared/Infrastructure/Persistence/JsonFile/JsonFileRepository";
 
