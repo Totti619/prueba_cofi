@@ -2,7 +2,6 @@ import { Request, Response } from 'express'
 import { ProductCreator } from '../Contexts/Application/Product/Create/ProductCreator'
 import { ProductUpdater } from '../Contexts/Application/Product/Update/ProductUpdater'
 import { JsonFileProductRepository } from '../Contexts/Infrastructure/Persistence/JsonFileProductRepository'
-// DEBUG PURPOSES, REMOVE BEFORE DEPLOYING
 import ProductFinder from '../Contexts/Application/Product/SearchAll/ProductFinder'
 import { Product } from '../Contexts/Domain/Product/Product'
 import ProductSearcher from '../Contexts/Application/Product/SearchAll/ProductSearcher'
