@@ -1,15 +1,18 @@
 # Cofi Code Challenge Solution
 
-Made with TypeScript and NodeJS
-
 ## Contents
 
+- [Introduction](#Introduction)
 - [Download](#Download)
 - [Instalation](#Instalation)
 - [Usage](#Usage)
     - [Data entities and persistence](#Data-entities-and-persistence)
     - [RESTful-API](#RESTful-API)
 - [Testing](#Testing)
+
+## <a name="Introduction"></a>Introduction
+
+This project is a solution for the [Cofi Code Challenge](challenge.md) and is made with Typescript and NodeJS with Hexagonal Architecture metodology
 
 ## <a name="Download"></a>Download
 
