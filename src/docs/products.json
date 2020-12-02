@@ -26,5 +26,11 @@
         "name": "product",
         "price": 50,
         "discount": 0
+    },
+    "888ac70b-4bd9-4c51-8489-4b5ab4d53377": {
+        "id": "888ac70b-4bd9-4c51-8489-4b5ab4d53377",
+        "code": "PRODUCT",
+        "name": "product",
+        "price": 999999
     }
 }
