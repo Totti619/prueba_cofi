@@ -26,7 +26,6 @@ export class ProductCheckout extends AggregateRoot implements Checkout {
                 ? productsByQuantity[product.code.value]++
                 : productsByQuantity[product.code.value] = 1
         })
-        console.log('productsByQuantity', productsByQuantity)
         const prices = this.productsScanned.map(
             product => productsByQuantity[product.code.value] >= discountFrom 
                 ? product.price.value - product.discount.value
