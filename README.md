@@ -25,6 +25,14 @@ Also you can download the whole project as a .zip file
 
 ## <a name="Instalation"></a>Instalation
 
+### With Docker
+
+If you have Docker on your system just execute the following:
+```bash
+docker-compose up --build
+```
+### Without Docker
+
 You may need Node v14.15.1 for make this project working properly
 Once you downloaded/cloned the project execute the following:
 ```bash
